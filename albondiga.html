@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+</head>
+<body style='margin : 0px; overflow: hidden;'>
+    <a-scene embedded artoolkit='sourceType: webcam;'>
+  <a-assets>
+
+  <!-- objeto  -->
+      <a-asset-item id="char-obj" src="https://raw.githubusercontent.com/zetitostopoulos/3d2/master/albondiga.obj"></a-asset-item>
+    <a-asset-item id="char-mtl" src="https://raw.githubusercontent.com/zetitostopoulos/3d2/master/albondiga.mtl"></a-asset-item>   
+
+ </a-assets>
+
+  <a-text value="Hola, A-Frame" color="#BBB"
+          position="-0.5 0.5 1" scale="1 1 1"></a-text>
+          
+<!-- Agregar un modelo 3d en formato .obj   -->  
+   <a-entity obj-model="obj: #char-obj; mtl: #char-mtl"  scale=".02 .02 .02" position="-0.5 0 -0.5"></a-entity>       
+
+		<a-marker-camera preset='hiro'></a-marker-camera>
+	</a-scene>
+</body>
+</html>
+
